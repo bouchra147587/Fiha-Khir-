@@ -41,9 +41,9 @@ class RoleSelectionScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
               const SizedBox(height: 50),
-              roleButton(context, "Citizen"),
+              loginButton(context, "Citizen"),
               const SizedBox(height: 20),
-              roleButton(context, "Organization"),
+              loginButton(context, "Organization"),
             ],
           ),
         ),
@@ -51,7 +51,7 @@ class RoleSelectionScreen extends StatelessWidget {
     );
   }
 
-  Widget roleButton(BuildContext context, String role) {
+  Widget loginButton(BuildContext context, String text) {
     return SizedBox(
       width: double.infinity,
       height: 50,
@@ -63,16 +63,14 @@ class RoleSelectionScreen extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          // Navigate to AuthScreen with the selected role
+          // Navigate to AuthScreen
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (_) => AuthScreen(initialRole: role),
-            ),
+            MaterialPageRoute(builder: (_) => const AuthScreen()),
           );
         },
         child: Text(
-          role,
+          text,
           style: const TextStyle(color: Colors.white, fontSize: 18),
         ),
       ),

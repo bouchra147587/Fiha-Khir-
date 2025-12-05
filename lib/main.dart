@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+
 import 'cubit/auth_cubit.dart';
-import 'screens/auth_screen.dart';
-import 'screens/RoleSelectionScreen.dart';
+import'screens/RoleSelectionScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +18,8 @@ class MyApp extends StatelessWidget {
       create: (_) => AuthCubit(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Auth Demo',
-        home: const RoleSelectionScreen (),
+        title: 'Fiha Khir',
+        home: const RoleSelectionScreen(), // start here
       ),
     );
   }
