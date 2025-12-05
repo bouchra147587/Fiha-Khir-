@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import '../models/user_model.dart';
 
 class OrganizationsScreen extends StatelessWidget {
   static const Color mainGreen = Color(0xFF0F4D37);
-
+  
   const OrganizationsScreen({Key? key}) : super(key: key);
 
   @override

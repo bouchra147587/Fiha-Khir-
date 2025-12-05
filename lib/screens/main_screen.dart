@@ -35,8 +35,8 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> pages = [
-       HomePage(),
-       ProblemsScreen(),
+      HomePage(user: widget.user),
+      ProblemsScreen(),
       const OrganizationsScreen(),
       ProfileScreen(user: widget.user),
     ];

@@ -33,13 +33,15 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       final prefs = await SharedPreferences.getInstance();
 
-      // Save user info
+      // Save user info including location and birthDay
       await prefs.setStringList('user', [
         user.name,
         user.phone,
         user.email,
         user.password,
         user.role,
+        user.location,
+        user.birthDay,
       ]);
 
       emit(AuthLoggedIn(user));
@@ -66,6 +68,8 @@ class AuthCubit extends Cubit<AuthState> {
         phone: data[1],
         role: data[4],
         password: data[3],
+        location: data.length > 5 ? data[5] : '',
+        birthDay: data.length > 6 ? data[6] : '',
       );
 
       if (email == user.email && password == user.password) {
@@ -95,9 +99,10 @@ class AuthCubit extends Cubit<AuthState> {
         phone: data[1],
         role: data[4],
         password: data[3],
+        location: data.length > 5 ? data[5] : '',
+        birthDay: data.length > 6 ? data[6] : '',
       );
     }
     return null;
   }
 }
-

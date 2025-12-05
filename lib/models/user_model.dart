@@ -4,6 +4,8 @@ class User {
   final String phone;
   final String role;
   final String password;
+  final String location;
+ final String birthDay;  
 
   User({
     required this.name,
@@ -11,5 +13,7 @@ class User {
     required this.phone,
     required this.role,
     required this.password,
+     this.location = '',
+    this.birthDay = '',
   });
 }
